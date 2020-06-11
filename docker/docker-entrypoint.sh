@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [[ -f /etc/kind/config.yaml ]]; then 
+  kind create cluster --name k8s-poc --config /etc/kind/config.yaml
+else 
+  kind create cluster --name k8s-poc
+fi
+
 kind create cluster --name k8s-poc
 
 helm repo add fluxcd https://charts.fluxcd.io
