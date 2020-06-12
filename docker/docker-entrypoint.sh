@@ -1,8 +1,10 @@
 #!/bin/bash
 
 if [[ -f /etc/kind/config.yaml ]]; then 
+  echo "kind with config"
   kind create cluster --name k8s-poc --config /etc/kind/config.yaml
 else 
+  echo "kind without config"
   kind create cluster --name k8s-poc
 fi
 
