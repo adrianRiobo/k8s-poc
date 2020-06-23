@@ -12,3 +12,8 @@ docker run -d --name k8s-poc \
            adrianriobo/k8s-poc:1.17.0
 ```
 
+helm repo add temporary http://localhost:8080
+
+helm install -f argo-values.yaml argocd temporary/argoc-d
+
+#kind load docker-image my-custom-image --name my-cluster-name
